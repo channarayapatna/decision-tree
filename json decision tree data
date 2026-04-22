@@ -1,0 +1,114 @@
+{
+  "title": "Balancing Work, Home & Upskilling",
+  "start": {
+    "time": "6:00 AM",
+    "node": "Start of the Day",
+    "decisions": [
+      {
+        "question": "Do I have urgent office work?",
+        "yes": {
+          "action": "Focus on Office Work",
+          "tasks": [
+            "Attend meetings",
+            "Finish tasks",
+            "Meet deadlines"
+          ],
+          "next": {
+            "question": "More office work?",
+            "yes": {
+              "action": "Continue office work"
+            },
+            "no": {
+              "go_to": "Check home chores"
+            }
+          }
+        },
+        "no": {
+          "go_to": "Check home chores"
+        }
+      },
+      {
+        "label": "Check home chores",
+        "question": "Do I have urgent home chores?",
+        "yes": {
+          "action": "Focus on House Chores",
+          "tasks": [
+            "Clean / Organize",
+            "Wash / Cook",
+            "Other chores"
+          ],
+          "next": {
+            "question": "More chores pending?",
+            "yes": {
+              "action": "Continue house chores"
+            },
+            "no": {
+              "go_to": "Afternoon Decision"
+            }
+          }
+        },
+        "no": {
+          "action": "Schedule time for Upskilling",
+          "duration": "1 hour",
+          "next": {
+            "go_to": "Afternoon Decision"
+          }
+        }
+      },
+      {
+        "label": "Afternoon Decision",
+        "time": "12:00 PM - 5:00 PM",
+        "question": "Is office workload heavy?",
+        "yes": {
+          "action": "Focus on Priority Office Work",
+          "tasks": [
+            "Prioritize tasks",
+            "Communicate",
+            "Stay on track"
+          ],
+          "next": {
+            "go_to": "Evening Decision"
+          }
+        },
+        "no": {
+          "action": "Complete Pending Tasks & Chores",
+          "tasks": [
+            "Office pending work",
+            "Household tasks",
+            "Plan for evening"
+          ],
+          "next": {
+            "go_to": "Evening Decision"
+          }
+        }
+      },
+      {
+        "label": "Evening Decision",
+        "time": "5:00 PM - 10:30 PM",
+        "question": "Do I have energy left for upskilling?",
+        "yes": {
+          "action": "Spend time on Upskilling",
+          "tasks": [
+            "Online course",
+            "Practice",
+            "Build new skills"
+          ],
+          "next": {
+            "end": "End of Day (10:30 PM)"
+          }
+        },
+        "no": {
+          "action": "Rest & Recharge",
+          "tasks": [
+            "Relax",
+            "Spend time with family",
+            "Sleep early"
+          ],
+          "next": {
+            "end": "End of Day (10:30 PM)"
+          }
+        }
+      }
+    ]
+  }
+}
